@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-30 03:31+0200\n"
+"PO-Revision-Date: 2019-05-30 03:32+0058\n"
+"Last-Translator: Erik Telepovsky <erik@pragmaticmates.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#: fields.py:39
+msgid "Enter a number or range of numbers with '-' separator."
+msgstr "Zadajte číslo alebo rozsah čísel oddelených '-'."
+
+#: mixins.py:64
+msgid "You are not authorized for this operation"
+msgstr "Na túto operáciu nemáte dostatok oprávnení"
+
+#: mixins.py:81
+msgid "Delete object"
+msgstr "Zmazať objekt"
+
+#: mixins.py:82
+msgid "Object successfully deleted."
+msgstr "Objekt úspešne zmazaný."
+
+#: mixins.py:83
+msgid ""
+"Object could not be deleted, check if some objects are not associated with "
+"it."
+msgstr ""
+"Objekt nemohol byť zmazaný. Skontrolujte či s ním nie sú asociované nejaké "
+"objekty."
+
+#: mixins.py:191
+msgid "Portrait"
+msgstr "Na výšku"
+
+#: mixins.py:192
+msgid "Landscape"
+msgstr "Na šírku"
+
+#: models.py:10
+msgid "object ID"
+msgstr "ID objektu"
+
+#: models.py:11
+msgid "object representation"
+msgstr "reprezentácia objektu"
+
+#: models.py:14
+msgid "datetime"
+msgstr "dátum a čas"
+
+#: models.py:17
+msgid "deleted object"
+msgstr "zmazaný objekt"
+
+#: models.py:18
+msgid "deleted objects"
+msgstr "zmazané objekty"
+
+#: templates/helpers/confirm_delete.html:4
+#, python-format
+msgid "Are you sure you want to delete <strong>%(object)s</strong>?"
+msgstr "Ste si istý zmazaním <strong>%(object)s</strong>?"
+
+#: templates/helpers/confirm_delete.html:8
+msgid "Yes"
+msgstr "Áno"
+
+#: templates/helpers/confirm_delete.html:9
+msgid "No"
+msgstr "Nie"
+
+#: templates/helpers/display_modes.html:6
+msgid "Paginate by"
+msgstr "Stránkovať po"
+
+#: templates/helpers/display_modes.html:21
+msgid "Display as"
+msgstr "Zobraziť ako"
+
+#: templates/helpers/filter_values.html:5
+msgid "Filter values"
+msgstr "Hodnoty filtra"
+
+#: templates/helpers/filter_values.html:12
+msgid "Unset"
+msgstr "Odnastaviť"
+
+#: templates/helpers/pagination.html:6
+#, python-format
+msgid ""
+"Showing <span class=\"start-end\">%(start)s-%(end)s</span> of <span "
+"class=\"total\">%(total_count)s</span>"
+msgstr ""
+"Zobrazených <span class=\"start-end\">%(start)s-%(end)s</span> z <span "
+"class=\"total\">%(total_count)s</span>"
+
+#: templates/helpers/sorting.html:6
+msgid "Sort by"
+msgstr "Zoradiť podľa"
+
+#: templates/maintenance_mode.html:4
+msgid "Maintenance mode"
+msgstr "Mód údržby"
+
+#: templates/maintenance_mode.html:7
+msgid "System is in the maintenance mode right now. Please, come back later."
+msgstr ""
+"Na webstránke momentálne prebieha plánovaná údržba. Skúste opäť neskôr."
+
+#: templatetags/pragmatic_tags.py:101
+msgid "after"
+msgstr "po"
+
+#: templatetags/pragmatic_tags.py:101
+msgid "from"
+msgstr "od"
+
+#: templatetags/pragmatic_tags.py:104
+msgid "before"
+msgstr "pred"
+
+#: templatetags/pragmatic_tags.py:104
+msgid "to"
+msgstr "do"
+
+#: templatetags/pragmatic_tags.py:154
+msgid "at least"
+msgstr "aspoň"
+
+#: templatetags/pragmatic_tags.py:156
+msgid "up to"
+msgstr "nanajvýš"
+
+#: templatetags/pragmatic_tags.py:195
+msgid "total"
+msgstr "celkom"
+
+#: templatetags/pragmatic_tags.py:198
+msgid "filtered, from a total of"
+msgstr "filtrovaných, z celkového počtu"
+
+#: templatetags/pragmatic_tags.py:236
+msgid "Invalid characters"
+msgstr "Neplatné znaky"
+
+#: templatetags/pragmatic_tags.py:427
+msgid "Table"
+msgstr "Tabuľka"
+
+#: templatetags/pragmatic_tags.py:428
+msgid "List"
+msgstr "Zoznam"
+
+#: templatetags/pragmatic_tags.py:429
+msgid "Columns"
+msgstr "Stĺpce"
+
+#: templatetags/pragmatic_tags.py:430
+msgid "Map"
+msgstr "Mapa"
+
+#: templatetags/pragmatic_tags.py:431
+msgid "Matrix"
+msgstr "Matica"
+
+#: templatetags/pragmatic_tags.py:432
+msgid "TV"
+msgstr "TV"
+
+#: templatetags/pragmatic_tags.py:433
+msgid "Graph"
+msgstr "Graf"
+
+#: templatetags/pragmatic_tags.py:434
+msgid "Calendar"
+msgstr "Kalendár"

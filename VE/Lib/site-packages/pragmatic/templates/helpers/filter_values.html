@@ -1,0 +1,17 @@
+{% load i18n pragmatic_tags %}
+
+{% if filter_values|length > 0 %}
+    <div class="filter-values">
+        <strong>{% trans 'Filter values' %}:</strong>
+
+        {% for param, field in filter_values.items %}
+            <div class="filter-value" data-param="{{ param }}">
+                <label>{{ field.label }}:</label>
+                <span>
+                    {{ field.value }}
+                    <a href="{{ full_path|remove_query_param:param }}">{% trans 'Unset' %}</a>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

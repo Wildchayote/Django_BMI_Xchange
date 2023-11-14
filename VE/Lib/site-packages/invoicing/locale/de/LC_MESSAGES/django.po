@@ -1,0 +1,1033 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-24 21:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:25
+msgid "overdue"
+msgstr ""
+
+#: admin.py:30
+msgid "no"
+msgstr ""
+
+#: admin.py:31
+msgid "yes"
+msgstr ""
+
+#: admin.py:56
+msgid "General information"
+msgstr ""
+
+#: admin.py:63
+msgid "Contact details"
+msgstr ""
+
+#: admin.py:68
+msgid "Payment details"
+msgstr ""
+
+#: admin.py:76
+msgid "Supplier details"
+msgstr ""
+
+#: admin.py:83
+msgid "Customer details"
+msgstr ""
+
+#: admin.py:89
+msgid "Shipping details"
+msgstr ""
+
+#: admin.py:101
+msgid "subtotal"
+msgstr ""
+
+#: admin.py:105
+msgid "supplier"
+msgstr ""
+
+#: admin.py:109
+msgid "customer"
+msgstr ""
+
+#: admin.py:113
+msgid "payment term"
+msgstr ""
+
+#: admin.py:118
+msgid "is overdue"
+msgstr ""
+
+#: admin.py:123
+msgid "is paid"
+msgstr ""
+
+#: admin.py:129
+msgid "Missing specification of accounting software"
+msgstr ""
+
+#: admin.py:147 managers.py:132
+#, python-format
+msgid "%d invoices sent to accounting software"
+msgstr ""
+
+#: admin.py:152
+msgid "Send to accounting software"
+msgstr ""
+
+#: admin.py:170
+msgid "Export to xlsx"
+msgstr ""
+
+#: admin.py:188
+msgid "Export to PDF"
+msgstr ""
+
+#: exporters.py:22
+msgid "invoices.xlsx"
+msgstr ""
+
+#: exporters.py:28
+msgid "Details"
+msgstr ""
+
+#: exporters.py:29 templates/invoicing/formatters/html.html:140
+msgid "ID"
+msgstr ""
+
+#: exporters.py:30
+msgid "Created"
+msgstr ""
+
+#: exporters.py:31
+msgid "Type"
+msgstr ""
+
+#: exporters.py:32
+msgid "Sequence"
+msgstr ""
+
+#: exporters.py:33
+msgid "Number"
+msgstr ""
+
+#: exporters.py:34
+msgid "Status"
+msgstr ""
+
+#: exporters.py:35
+msgid "Subtitle"
+msgstr ""
+
+#: exporters.py:36
+msgid "Language"
+msgstr ""
+
+#: exporters.py:37 templates/invoicing/formatters/html.html:196
+msgid "Note"
+msgstr ""
+
+#: exporters.py:39
+msgid "Dates"
+msgstr ""
+
+#: exporters.py:40 templates/invoicing/formatters/html.html:85
+msgid "Issue date"
+msgstr ""
+
+#: exporters.py:41
+msgid "Tax point date"
+msgstr ""
+
+#: exporters.py:42 templates/invoicing/formatters/html.html:109
+msgid "Due date"
+msgstr ""
+
+#: exporters.py:43
+msgid "Sent (date)"
+msgstr ""
+
+#: exporters.py:44
+msgid "Date of payment"
+msgstr ""
+
+#: exporters.py:45
+msgid "Payment term (days)"
+msgstr ""
+
+#: exporters.py:46
+msgid "Overdue (days)"
+msgstr ""
+
+#: exporters.py:51
+msgid "Payment"
+msgstr ""
+
+#: exporters.py:52
+msgid "Total"
+msgstr ""
+
+#: exporters.py:53 models.py:208 templates/invoicing/formatters/html.html:221
+msgid "VAT"
+msgstr ""
+
+#: exporters.py:54
+msgid "Currency"
+msgstr ""
+
+#: exporters.py:55
+msgid "Credit"
+msgstr ""
+
+#: exporters.py:56 templates/invoicing/formatters/html.html:121
+msgid "Payment method"
+msgstr ""
+
+#: exporters.py:57 templates/invoicing/formatters/html.html:122
+msgid "Constant symbol"
+msgstr ""
+
+#: exporters.py:58 templates/invoicing/formatters/html.html:123
+msgid "Variable symbol"
+msgstr ""
+
+#: exporters.py:59 templates/invoicing/formatters/html.html:124
+msgid "Specific symbol"
+msgstr ""
+
+#: exporters.py:60 templates/invoicing/formatters/html.html:125
+msgid "Reference"
+msgstr ""
+
+#: exporters.py:61
+msgid "Bank name"
+msgstr ""
+
+#: exporters.py:66
+msgid "IBAN"
+msgstr ""
+
+#: exporters.py:67
+msgid "SWIFT/BIC"
+msgstr ""
+
+#: exporters.py:69 templates/invoicing/formatters/html.html:38
+msgid "Issuer"
+msgstr ""
+
+#: exporters.py:70
+msgid "Supplier name"
+msgstr ""
+
+#: exporters.py:71
+msgid "Supplier street"
+msgstr ""
+
+#: exporters.py:72
+msgid "Supplier zip"
+msgstr ""
+
+#: exporters.py:73
+msgid "Supplier city"
+msgstr ""
+
+#: exporters.py:74
+msgid "Supplier country"
+msgstr ""
+
+#: exporters.py:75
+msgid "Supplier reg. ID"
+msgstr ""
+
+#: exporters.py:76
+msgid "Supplier tax ID"
+msgstr ""
+
+#: exporters.py:77
+msgid "Supplier VAT ID"
+msgstr ""
+
+#: exporters.py:78
+msgid "Supplier additional info"
+msgstr ""
+
+#: exporters.py:79
+msgid "Issuer name"
+msgstr ""
+
+#: exporters.py:80
+msgid "Issuer email"
+msgstr ""
+
+#: exporters.py:81
+msgid "Issuer phone"
+msgstr ""
+
+#: exporters.py:83 templates/invoicing/formatters/html.html:59
+msgid "Customer"
+msgstr ""
+
+#: exporters.py:84
+msgid "Customer name"
+msgstr ""
+
+#: exporters.py:85
+msgid "Customer street"
+msgstr ""
+
+#: exporters.py:86
+msgid "Customer zip"
+msgstr ""
+
+#: exporters.py:87
+msgid "Customer city"
+msgstr ""
+
+#: exporters.py:88
+msgid "Customer country"
+msgstr ""
+
+#: exporters.py:89
+msgid "Customer reg. ID"
+msgstr ""
+
+#: exporters.py:90
+msgid "Customer tax ID"
+msgstr ""
+
+#: exporters.py:91
+msgid "Customer VAT ID"
+msgstr ""
+
+#: exporters.py:92
+msgid "Customer additional info"
+msgstr ""
+
+#: exporters.py:93
+msgid "Customer email"
+msgstr ""
+
+#: exporters.py:94
+msgid "Customer phone"
+msgstr ""
+
+#: exporters.py:112
+msgid "Invoices"
+msgstr ""
+
+#: exporters.py:125
+msgid "invoices.zip"
+msgstr ""
+
+#: helpers.py:52
+msgid "Invoice type is required when INVOICING_COUNTER_PER_TYPE is enabled"
+msgstr ""
+
+#: helpers.py:57
+msgid "Invoice type specified but INVOICING_COUNTER_PER_TYPE is disabled"
+msgstr ""
+
+#: managers.py:25
+#, python-format
+msgid "Accounting software %s not implemented"
+msgstr ""
+
+#: managers.py:38
+msgid "Missing accounting software API key"
+msgstr ""
+
+#: managers.py:116
+#, python-format
+msgid "Result code: %d. Message: %s (%s)"
+msgstr ""
+
+#: managers.py:127
+#, python-format
+msgid ""
+"%d invoices sent to accounting software [<a href=\"%s\" target=\"_blank"
+"\">Fetch</a>]"
+msgstr ""
+
+#: managers.py:140
+msgid "Missing accounting software API data"
+msgstr ""
+
+#: managers.py:157 templates/invoicing/formatters/html.html:24
+#: templates/invoicing/formatters/html.html:70
+msgid "Reg. No."
+msgstr ""
+
+#: managers.py:162 templates/invoicing/formatters/html.html:25
+#: templates/invoicing/formatters/html.html:71
+msgid "Tax No."
+msgstr ""
+
+#: managers.py:167 templates/invoicing/formatters/html.html:26
+#: templates/invoicing/formatters/html.html:72
+msgid "VAT No."
+msgstr ""
+
+#: models.py:55
+msgid "daily"
+msgstr ""
+
+#: models.py:56
+msgid "monthly"
+msgstr ""
+
+#: models.py:57
+msgid "yearly"
+msgstr ""
+
+#: models.py:61
+msgid "Invoice"
+msgstr ""
+
+#: models.py:62
+msgid "Advance invoice"
+msgstr ""
+
+#: models.py:63
+msgid "Proforma invoice"
+msgstr ""
+
+#: models.py:64
+msgid "Credit note"
+msgstr ""
+
+#: models.py:68
+msgid "new"
+msgstr ""
+
+#: models.py:69
+msgid "sent"
+msgstr ""
+
+#: models.py:70
+msgid "returned"
+msgstr ""
+
+#: models.py:71
+msgid "canceled"
+msgstr ""
+
+#: models.py:72
+msgid "paid"
+msgstr ""
+
+#: models.py:73
+msgid "credited"
+msgstr ""
+
+#: models.py:74
+msgid "uncollectible"
+msgstr ""
+
+#: models.py:78
+msgid "bank transfer"
+msgstr ""
+
+#: models.py:79
+msgid "cash"
+msgstr ""
+
+#: models.py:80
+msgid "cash on delivery"
+msgstr ""
+
+#: models.py:81
+msgid "payment card"
+msgstr ""
+
+#: models.py:85
+msgid "personal pickup"
+msgstr ""
+
+#: models.py:86
+msgid "mailing"
+msgstr ""
+
+#: models.py:87
+msgid "digital"
+msgstr ""
+
+#: models.py:91
+msgid ""
+"0001 - Payments for goods based on legal and executable decision from legal "
+"authority"
+msgstr ""
+
+#: models.py:92
+msgid "0008 - Cashless payments for goods"
+msgstr ""
+
+#: models.py:93
+msgid "0038 - Cashless funds for wages"
+msgstr ""
+
+#: models.py:94
+msgid "0058 - Cashless penalty and delinquency charges"
+msgstr ""
+
+#: models.py:95
+msgid "0068 - Transfer of funds for wages and other personal costs"
+msgstr ""
+
+#: models.py:96
+msgid "0138 - Cashless deductions at source"
+msgstr ""
+
+#: models.py:97
+msgid "0168 - Cashless payments in loans"
+msgstr ""
+
+#: models.py:98
+msgid "0178 - Sales from provided services"
+msgstr ""
+
+#: models.py:99
+msgid "0298 - Other cashless transfers"
+msgstr ""
+
+#: models.py:100
+msgid "0304 - Prior payments for services"
+msgstr ""
+
+#: models.py:101
+msgid "0308 - Cashless payments for services"
+msgstr ""
+
+#: models.py:102
+msgid "0358 - Payments dedicated to payout through post offices"
+msgstr ""
+
+#: models.py:103
+msgid "0379 - Other income, income from postal order"
+msgstr ""
+
+#: models.py:104
+msgid "0498 - Payments in loans"
+msgstr ""
+
+#: models.py:105
+msgid "0558 - Cashless other financial payments"
+msgstr ""
+
+#: models.py:106
+msgid "0934 - Benefits - prior payments"
+msgstr ""
+
+#: models.py:107
+msgid "0968 - Other cashless transfers"
+msgstr ""
+
+#: models.py:108
+msgid "1144 - Prior payment - advance"
+msgstr ""
+
+#: models.py:109
+msgid "1148 - Payment - current advance"
+msgstr ""
+
+#: models.py:110
+msgid ""
+"1744 - Accounting of tax at income tax of physical body and corporate body"
+msgstr ""
+
+#: models.py:111
+msgid ""
+"1748 - Income tax of physical body and corporate body based on declared tax "
+"year"
+msgstr ""
+
+#: models.py:112
+msgid "3118 - Insurance and empl. contrib. to insur. co. and the Labor Office"
+msgstr ""
+
+#: models.py:113
+msgid "3344 - Penalty from message - prior"
+msgstr ""
+
+#: models.py:114
+msgid "3348 - Penalty from message"
+msgstr ""
+
+#: models.py:115
+msgid "3354 - Insurance payments by insurance companies"
+msgstr ""
+
+#: models.py:116
+msgid "3558 - Cashless insurance payments by insurance companies"
+msgstr ""
+
+#: models.py:117
+msgid "8147 - Payment (posted together with the instruction)"
+msgstr ""
+
+#: models.py:121
+msgid "type"
+msgstr ""
+
+#: models.py:122
+msgid "sequence"
+msgstr ""
+
+#: models.py:123
+msgid "number"
+msgstr ""
+
+#: models.py:124
+msgid "status"
+msgstr ""
+
+#: models.py:125
+msgid "subtitle"
+msgstr ""
+
+#: models.py:126
+msgid "related document"
+msgstr ""
+
+#: models.py:127
+msgid "related invoices"
+msgstr ""
+
+#: models.py:128
+msgid "language"
+msgstr ""
+
+#: models.py:129
+msgid "note"
+msgstr ""
+
+#: models.py:129
+msgid "Thank you for using our services."
+msgstr ""
+
+#: models.py:130
+msgid "issue date"
+msgstr ""
+
+#: models.py:131
+msgid "tax point date"
+msgstr ""
+
+#: models.py:131
+msgid "time of supply"
+msgstr ""
+
+#: models.py:132
+msgid "due date"
+msgstr ""
+
+#: models.py:132
+msgid "payment till"
+msgstr ""
+
+#: models.py:133
+msgid "date sent"
+msgstr ""
+
+#: models.py:135
+msgid "date paid"
+msgstr ""
+
+#: models.py:137
+msgid "date reminder sent"
+msgstr ""
+
+#: models.py:141
+msgid "currency"
+msgstr ""
+
+#: models.py:142 templates/invoicing/formatters/html.html:245
+msgid "credit"
+msgstr ""
+
+#: models.py:145
+msgid "payment method"
+msgstr ""
+
+#: models.py:146
+msgid "constant symbol"
+msgstr ""
+
+#: models.py:147
+msgid "variable symbol"
+msgstr ""
+
+#: models.py:150
+msgid "specific symbol"
+msgstr ""
+
+#: models.py:153
+msgid "reference"
+msgstr ""
+
+#: models.py:155
+msgid "bank name"
+msgstr ""
+
+#: models.py:156
+msgid "bank street and number"
+msgstr ""
+
+#: models.py:157
+msgid "bank ZIP"
+msgstr ""
+
+#: models.py:158
+msgid "bank city"
+msgstr ""
+
+#: models.py:159
+msgid "bank country"
+msgstr ""
+
+#: models.py:160
+msgid "Account number (IBAN)"
+msgstr ""
+
+#: models.py:161
+msgid "Bank SWIFT / BIC"
+msgstr ""
+
+#: models.py:164
+msgid "supplier name"
+msgstr ""
+
+#: models.py:165
+msgid "supplier street and number"
+msgstr ""
+
+#: models.py:166
+msgid "supplier ZIP"
+msgstr ""
+
+#: models.py:167
+msgid "supplier city"
+msgstr ""
+
+#: models.py:168
+msgid "supplier country"
+msgstr ""
+
+#: models.py:169
+msgid "supplier Reg. No."
+msgstr ""
+
+#: models.py:170
+msgid "supplier Tax No."
+msgstr ""
+
+#: models.py:171
+msgid "supplier VAT No."
+msgstr ""
+
+#: models.py:172
+msgid "supplier additional information"
+msgstr ""
+
+#: models.py:176
+msgid "issuer name"
+msgstr ""
+
+#: models.py:177
+msgid "issuer email"
+msgstr ""
+
+#: models.py:178
+msgid "issuer phone"
+msgstr ""
+
+#: models.py:181
+msgid "customer name"
+msgstr ""
+
+#: models.py:182
+msgid "customer street and number"
+msgstr ""
+
+#: models.py:183
+msgid "customer ZIP"
+msgstr ""
+
+#: models.py:184
+msgid "customer city"
+msgstr ""
+
+#: models.py:185
+msgid "customer country"
+msgstr ""
+
+#: models.py:186
+msgid "customer Reg. No."
+msgstr ""
+
+#: models.py:187
+msgid "customer Tax No."
+msgstr ""
+
+#: models.py:188
+msgid "customer VAT No."
+msgstr ""
+
+#: models.py:189
+msgid "customer additional information"
+msgstr ""
+
+#: models.py:191
+msgid "customer email"
+msgstr ""
+
+#: models.py:192
+msgid "customer phone"
+msgstr ""
+
+#: models.py:195
+msgid "shipping name"
+msgstr ""
+
+#: models.py:196
+msgid "shipping street and number"
+msgstr ""
+
+#: models.py:197
+msgid "shipping ZIP"
+msgstr ""
+
+#: models.py:198
+msgid "shipping city"
+msgstr ""
+
+#: models.py:199
+msgid "shipping country"
+msgstr ""
+
+#: models.py:202
+msgid "delivery method"
+msgstr ""
+
+#: models.py:206
+msgid "total"
+msgstr ""
+
+#: models.py:212
+msgid "attachments"
+msgstr ""
+
+#: models.py:214 models.py:538
+msgid "created"
+msgstr ""
+
+#: models.py:215 models.py:539
+msgid "modified"
+msgstr ""
+
+#: models.py:220 models.py:526
+msgid "invoice"
+msgstr ""
+
+#: models.py:221
+msgid "invoices"
+msgstr ""
+
+#: models.py:522
+msgid "pcs."
+msgstr ""
+
+#: models.py:523
+msgid "hours"
+msgstr ""
+
+#: models.py:527
+msgid "title"
+msgstr ""
+
+#: models.py:528
+msgid "quantity"
+msgstr ""
+
+#: models.py:529
+msgid "unit"
+msgstr ""
+
+#: models.py:530
+msgid "unit price"
+msgstr ""
+
+#: models.py:531
+msgid "discount (%)"
+msgstr ""
+
+#: models.py:532
+msgid "tax rate (%)"
+msgstr ""
+
+#: models.py:532
+msgid "VAT rate"
+msgstr ""
+
+#: models.py:534
+msgid "tag"
+msgstr ""
+
+#: models.py:536
+msgid "weight"
+msgstr ""
+
+#: models.py:536
+msgid "ordering"
+msgstr ""
+
+#: models.py:544
+msgid "item"
+msgstr ""
+
+#: models.py:545
+msgid "items"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:13
+msgid "Supplier"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:30
+msgid "Bank"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:31
+msgid "Title"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:33
+msgid "Agency address"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:35
+msgid "Bank IBAN code"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:36
+msgid "SWIFT / BIC"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:40
+msgid "Name"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:42
+msgid "Phone"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:43
+msgid "Email"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:47
+msgid "Additional data"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:95
+msgid "Time of supply"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:112
+msgid "day,days"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:120
+msgid "Delivery method"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:133
+msgid "Invoice items"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:141
+msgid "Description"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:142
+msgid "Quantity"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:143
+msgid "Unit"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:144
+msgid "Unit price"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:146
+msgid "Discount"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:149
+msgid "Price"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:150
+msgid "Tax rate"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:151
+msgid "VAT amount"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:153
+msgid "Line total"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:154
+msgid "with taxes"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:186
+msgid "There are no invoice items."
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:204
+msgid "Summary"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:210
+msgid "Base"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:227
+msgid "Not a VAT payer"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:239
+msgid "Other"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:251
+msgid "price before discount"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:255
+msgid "total discount"
+msgstr ""
+
+#: templates/invoicing/formatters/html.html:269
+msgid "TOTAL DUE"
+msgstr ""

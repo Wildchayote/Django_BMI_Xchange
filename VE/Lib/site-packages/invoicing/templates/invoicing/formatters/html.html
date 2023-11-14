@@ -1,0 +1,289 @@
+{% load i18n invoicing %}
+{% language invoice.language %}
+    <div class="row">
+        <div class="col-md-12 text-right invoice-title">
+            <h1>{{ invoice.get_type_display }} {{ invoice }}</h1>
+            <h3 class="text-muted invoice-subtitle">{{ invoice.subtitle|default:'' }}</h3><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{% trans 'Supplier' %}</h3>
+                </div>
+                <div class="panel-body mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ invoice.supplier_name }}<br>
+                            {{ invoice.supplier_street|default:'' }}<br>
+                            {{ invoice.supplier_zip|default:'' }} {{ invoice.supplier_city|default:'' }}<br>
+                            {{ invoice.get_supplier_country_display }}<br>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>{% trans 'Reg. No.' %}:</strong> {{ invoice.supplier_registration_id|default:'' }}<br>
+                            <strong>{% trans 'Tax No.' %}:</strong> {{ invoice.supplier_tax_id|default:'' }}<br>
+                            <strong>{% trans 'VAT No.' %}:</strong> {% if invoice.is_supplier_vat_id_visible %}{{ invoice.supplier_vat_id|default:'' }}{% endif %}<br>
+                        </div>
+                    </div>
+                    <br>
+                    <i>{% trans 'Bank' %}:</i><br>
+                    <strong>{% trans 'Title' %}:</strong> {{ invoice.bank_name|default:'' }}<br>
+                    {% if invoice.bank_street or invoice.bank_zip or invoice.bank_city or invoice.bank_country %}
+                        <strong>{% trans 'Agency address' %}:</strong> {% if invoice.bank_street %}{{ invoice.bank_street|default:'' }}, {% endif %}{% if invoice.bank_zip or invoice.bank_city %}{{ invoice.bank_zip|default:'' }} {{ invoice.bank_city|default:'' }}, {% endif %}{% if invoice.bank_country %}{{ invoice.get_bank_country_display|default:'' }}{% endif %}<br>
+                    {% endif %}
+                    <strong>{% trans 'Bank IBAN code' %}:</strong> {{ invoice.bank_iban|nice_iban }}<br>
+                    <strong>{% trans 'SWIFT / BIC' %}:</strong> {{ invoice.bank_swift_bic }}<br>
+                    <br>
+                    <i>{% trans 'Issuer' %}:</i><br>
+                    {% if invoice.issuer_name %}
+                        <strong>{% trans 'Name' %}:</strong> {{ invoice.issuer_name|default:'' }}<br>
+                    {% endif %}
+                    {% if invoice.issuer_phone %}<strong>{% trans 'Phone' %}:</strong> {{ invoice.issuer_phone|default:'' }}<br>{% endif %}
+                    <strong>{% trans 'Email' %}:</strong> {{ invoice.issuer_email|default:'' }}<br>
+
+                    {% if invoice.supplier_additional_info %}
+                        <br>
+                        <i>{% trans 'Additional data' %}:</i><br>
+                        {% for label, value in invoice.supplier_additional_info.items %}
+                            <strong>{{ label }}:</strong> {{ value|default:'' }}<br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{% trans 'Customer' %}</h3>
+                </div>
+                <div class="panel-body mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ invoice.customer_name }}<br>
+                            {{ invoice.customer_street|default:'' }}<br>
+                            {{ invoice.customer_zip|default:'' }} {{ invoice.customer_city|default:'' }}<br>
+                            {{ invoice.get_customer_country_display|default:'' }}<br>
+                        </div>
+                        <div class="col-md-6">
+                            {% if invoice.customer_registration_id %}<strong>{% trans 'Reg. No.' %}:</strong> {{ invoice.customer_registration_id }}<br>{% endif %}
+                            {% if invoice.customer_tax_id %}<strong>{% trans 'Tax No.' %}:</strong> {{ invoice.customer_tax_id }}<br>{% endif %}
+                            {% if invoice.customer_vat_id %}<strong>{% trans 'VAT No.' %}:</strong> {{ invoice.customer_vat_id }}<br>{% endif %}
+                        </div>
+
+                        {# TODO: invoice.customer_additional_info #}
+                        {# TODO: invoice.shipping #}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'Issue date' %}</h3>
+                        </div>
+                        <div class="panel-body mb-4">
+                            {{ invoice.date_issue|date:INVOICING_DATE_FORMAT_TAG }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'Time of supply' %}</h3>
+                        </div>
+                        <div class="panel-body mb-4">
+                            {% if invoice.get_type_display != invoice.TYPE.ADVANCE %}
+                                {{ invoice.date_tax_point|date:INVOICING_DATE_FORMAT_TAG }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'Due date' %}</h3>
+                        </div>
+                        <div class="panel-body mb-4">
+                            {{ invoice.date_due|date:INVOICING_DATE_FORMAT_TAG }} <small>({{ invoice.payment_term }} {{ invoice.payment_term|pluralize:_("day,days") }})</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-warning">
+                <div class="panel-body mb-4">
+                    {% if invoice.delivery_method %}<strong>{% trans 'Delivery method' %}:</strong> {{ invoice.get_delivery_method_display|default:'' }}<br>{% endif %}
+                    {% if invoice.payment_method %}<strong>{% trans 'Payment method' %}:</strong> {{ invoice.get_payment_method_display|default:'' }}<br>{% endif %}
+                    {% if invoice.constant_symbol %}<strong>{% trans 'Constant symbol' %}:</strong> {{ invoice.constant_symbol|default:'' }}<br>{% endif %}
+                    {% if invoice.variable_symbol %}<strong>{% trans 'Variable symbol' %}:</strong> {{ invoice.variable_symbol|default:'' }}<br>{% endif %}
+                    {% if invoice.specific_symbol %}<strong>{% trans 'Specific symbol' %}:</strong> {{ invoice.specific_symbol|default:'' }}<br>{% endif %}
+                    {% if invoice.reference %}<strong>{% trans 'Reference' %}:</strong> {{ invoice.reference|default:'' }}<br>{% endif %}
+                </div>
+            </div>
+        </div>
+    </div><!-- ./row -->
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% trans 'Invoice items' %}</h3>
+        </div>
+        <div class="panel-body mb-4">
+            {% if invoice.item_set.exists %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>{% trans 'ID' %}</th>
+                            <th>{% trans 'Description' %}</th>
+                            <th class="text-right">{% trans 'Quantity' %}<br></th>
+                            <th>{% trans 'Unit' %}<br></th>
+                            <th class="text-right nowrap">{% trans 'Unit price' %}</th>
+                            {% if invoice.has_discount %}
+                                <th class="text-right nowrap">{% trans 'Discount' %}</th>
+                            {% endif %}
+                            {% if invoice.vat or invoice.vat == 0 %}
+                                <th class="text-right">{% trans 'Price' %}</th>
+                                <th class="text-right nowrap">{% trans 'Tax rate' %}</th>
+                                <th class="text-right nowrap">{% trans 'VAT amount' %}</th>
+                            {% endif %}
+                            <th class="text-right">{% trans 'Line total' %}
+                                {% if invoice.vat or invoice.vat == 0 %}<br><small>{% trans 'with taxes' %}</small>{% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in invoice.item_set.all %}
+                        <tr>
+                            <td class="minimal-width nowrap">
+                                {% if item.get_absolute_url %}
+                                    <a href="{{ item.get_absolute_url }}">{{ forloop.counter }}</a>
+                                {% else %}
+                                    {{ forloop.counter }}
+                                {% endif %}
+                            </td>
+                            <td>{{ item.title|linebreaksbr }}</td>
+                            <td class="minimal-width nowrap text-right">{{ item.quantity|floatformat:"-3" }}</td>
+                            <td class="minimal-width nowrap">{{ item.get_unit_display }}</td>
+                            <td class="minimal-width nowrap text-right">{{ item.unit_price|floatformat:"2" }} {{ invoice.currency }}</td>
+                            {% if invoice.has_discount %}
+                                <td class="minimal-width nowrap text-right">{{ item.discount|default:0 }} %</td>
+                            {% endif %}
+                            {% if invoice.vat or invoice.vat == 0 %}
+                                <td class="minimal-width nowrap text-right">{{ item.subtotal|floatformat:"2" }} {{ invoice.currency }}</td>
+                                <td class="minimal-width nowrap text-right">{% if item.tax_rate or item.tax_rate == 0 %}{{ item.tax_rate|floatformat }}%{% else %}-{% endif %}</td>
+                                <td class="minimal-width nowrap text-right">{{ item.vat|floatformat:"2" }} {{ invoice.currency }}</td>
+                            {% endif %}
+                            <td class="minimal-width nowrap text-right"><strong>{{ item.total|floatformat:"2" }} {{ invoice.currency }}</strong></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                {% trans 'There are no invoice items.' %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            {% if invoice.note %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>{% trans 'Note' %}:</h4>
+                        {{ invoice.note }}<br><br>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-5">
+            <h4>{% trans 'Summary' %}:</h4>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'Base' %}</h3>
+                        </div>
+                        <div class="panel-body text-right">
+                            {{ invoice.subtotal|floatformat:"2" }} {{ invoice.currency }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'VAT' %}</h3>
+                        </div>
+                        <div class="panel-body text-right">
+                            {% if invoice.vat or invoice.vat == 0 %}
+                                {{ invoice.vat|floatformat:"2" }} {{ invoice.currency }}
+                            {% else %}
+                                {% trans 'Not a VAT payer' %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {% if invoice.credit or invoice.has_discount %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{% trans 'Other' %}</h3>
+                            </div>
+                            <div class="panel-body mb-4">
+                                <div class="row">
+                                    {% if invoice.credit %}
+                                        <div class="col-md-12 text-right">
+                                            <strong>{% trans 'credit' %}:</strong> {{ invoice.credit|floatformat:"2" }} {{ invoice.currency }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if invoice.has_discount %}
+                                        <div class="col-md-12 text-right">
+                                            <strong>{% trans 'price before discount' %}:</strong>
+                                            {{ invoice.total_without_discount|floatformat:"2" }} {{ invoice.currency }}
+                                        </div>
+                                        <div class="col-md-12 text-right">
+                                            <strong>{% trans 'total discount' %}:</strong>
+                                            {{ invoice.discount|floatformat:"2" }} {{ invoice.currency }}
+                                            ({{ invoice.discount_percentage }}%)
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="col-md-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{% trans 'Total' %}</h3>
+                        </div>
+                        <div class="panel-body mb-4">
+                            <!--{{ invoice.total_in_string }}-->
+
+                            {% if invoice.already_paid > 0 %}
+                                <strong>{% trans 'Sum' %}</strong>
+                                <h4 class="text-right" style="margin:0px">{{ invoice.total|floatformat:"2" }} {{ invoice.currency }}</h4>
+
+                                <strong>{% trans 'Already paid' %}</strong>
+                                <h4 class="text-right" style="margin:0px">-{{ invoice.already_paid|floatformat:"2" }} {{ invoice.currency }}</h4>
+                            {% endif %}
+                                <strong>{% trans 'Total due' %}</strong>
+                                <h1 class="text-right" style="margin:0px">{{ invoice.to_pay|floatformat:"2" }} {{ invoice.currency }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endlanguage %}

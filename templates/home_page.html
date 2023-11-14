@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+
+    <p>Here are links to the BMI and Xchange pages:</p>
+    <li><a href="{% url 'calculate_bmi' %}">{{ BMI }}</a></li>
+    <li><a href="{% url 'mainform' %}">{{ xchange }}</a></li>
+    
+</body>
+</html>

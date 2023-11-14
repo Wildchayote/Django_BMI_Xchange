@@ -1,0 +1,74 @@
+{% load i18n pragmatic_tags %}
+
+<div class="pagination-wrapper">
+    {% if total_count > 0 %}
+        <span class="showing">
+            {% blocktrans %}Showing <span class="start-end">{{ start }}-{{ end }}</span> of <span class="total">{{ total_count }}</span>{% endblocktrans %}
+        </span>
+    {% endif %}
+
+    {% if page_numbers|length > 1 %}
+        <ul class="pagination">
+            {% if has_previous %}
+                {% with previous|stringformat:"s" as page_num %}
+                    {% with page_ident|add:"="|add:page_num as param %}
+                        <li class="button left"><a href="{{ request.get_full_path|replace_query_param:param }}"><i class="fa fa-arrow-left"></i></a></li>
+                    {% endwith %}
+                {% endwith %}
+            {% else %}
+                <li class="button left disabled"><a><i class="fa fa-arrow-left"></i></a></li>
+            {% endif %}
+
+            {% if show_first %}
+                {% with 1|stringformat:"s" as page_num %}
+                    {% with page_ident|add:"="|add:page_num as param %}
+                        <li><a href="{{ request.get_full_path|replace_query_param:param }}">{{ page_num }}<span></span></a></li>
+                    {% endwith %}
+                {% endwith %}
+
+                {% if show_left_dots %}
+                    <li class="disabled dots"><a>...</a></li>
+                {% endif %}
+            {% endif %}
+
+            {% for linkpage in page_numbers %}
+                {% ifequal linkpage page %}
+                    <li class="active disabled">
+                        <a>
+                            {{ page }}
+                            <span></span>
+                        </a>
+                    </li>
+                {% else %}
+                    {% with linkpage|stringformat:"s" as page_num %}
+                        {% with page_ident|add:"="|add:page_num as param %}
+                            <li><a href="{{ request.get_full_path|replace_query_param:param }}">{{ page_num }}<span></span></a></li>
+                        {% endwith %}
+                    {% endwith %}
+                {% endifequal %}
+            {% endfor %}
+
+            {% if show_last %}
+                {% if show_right_dots %}
+                    <li class="dots"><a>...</a></li>
+                {% endif %}
+
+                {% with count|stringformat:"s" as page_num %}
+                    {% with page_ident|add:"="|add:page_num as param %}
+                        <li><a href="{{ request.get_full_path|replace_query_param:param }}">{{ page_num }}<span></span></a></li>
+                    {% endwith %}
+                {% endwith %}
+            {% endif %}
+
+            {% if has_next %}
+                {% with next|stringformat:"s" as page_num %}
+                    {% with page_ident|add:"="|add:page_num as param %}
+                        <li class="button right"><a href="{{ request.get_full_path|replace_query_param:param }}"><i class="fa fa-arrow-right"></i></a></li>
+                    {% endwith %}
+                {% endwith %}
+            {% else %}
+                <li class="button right disabled"><a><i class="fa fa-arrow-right"></i></a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+</div>
