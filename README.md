@@ -2,5 +2,6 @@
 # Soft_Django_Projects
 Simple Django projects for starters.
 # Experience
-1. Python programming and https://www.codingforentrepreneurs.com/courses/getting-started-html-css/
-Clone repo and run- no special requirements.
+1. Python programming and Basic HTML and CSS
+2. Clone repo and run- no special requirements.
+
