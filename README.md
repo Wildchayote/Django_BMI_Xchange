@@ -1,4 +1,9 @@
-[![Python](https://github.com/Wildchayote/32.private/blob/main/Capture.PNG)](https://en.wikipedia.org/wiki/Nigeria)
+
+
+<a href="https://en.wikipedia.org/wiki/Nigeria">
+  <img src="https://github.com/Wildchayote/32.private/blob/main/Capture.PNG" alt="Alt text" width="200px">
+</a>
+
 # Soft-Django
 Simple Django projects for starters.
 ### Recommended Experience
