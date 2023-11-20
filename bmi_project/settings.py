@@ -24,9 +24,12 @@ print(BASE_DIR)
 SECRET_KEY = 'django-insecure-&o^09pbr3ks%oedk%+yyb5%17i01+qy)vh4096k=hcfw&vs2dy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get('DEBUG')) == "1" # 1 == True
 
+ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
 ALLOWED_HOSTS = []
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
 
 
 # Application definition
@@ -40,16 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bmi_app',
     'xchange',
-    # 'commerce',
-    # 'easy_thumbnails',
-    # 'filer',
-    # 'mptt',
-    # 'internationalflavor',
-    # 'pragmatic',
-    # 'invoicing',
-    # 'requests_futures',
-    # 'requests',
-    # 'psycopg2'
 ]
 
 MIDDLEWARE = [
