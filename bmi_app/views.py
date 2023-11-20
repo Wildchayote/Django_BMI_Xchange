@@ -67,3 +67,7 @@ def bmi_result(request, pk):
     if pk%2 !=0:
         BMIRecord.objects.get(pk=pk).delete()
     return render(request, 'bmi_result.html', {'bmi_record': bmi_record, 'bmi': bmi, 'bmi_result': bmi_result})
+    
+def home_view(request):
+    context =  {'BMI': 'BMI Page', 'xchange': 'Xchange Page'}
+    return render (request, 'home_page.html',context)
