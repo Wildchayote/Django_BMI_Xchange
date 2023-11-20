@@ -17,5 +17,5 @@
     {% elif bmi >= 30.0 %}
     <p><b>Remark: </b> {{bmi_record.name}}, you are within the obese range (30 and above).</p>
     {% endif %}
-
+    <li> Back to <a href="{% url 'home' %}">{{ Home }}</a></li>
 {%endblock%}
