@@ -1,5 +1,39 @@
-<h1>Calculate BMI</h1>
-<form method="post">{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your HTML Page</title>
+
+    <style>
+        /* Add your CSS styles for the button here */
+        .styled-button {
+            background-color: #4CAF50; /* Green background color */
+            border: none; /* Remove borders */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Add padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: Add rounded corners */
+        }
+    </style>
+</head>
+<body>
+  <h1>Calculate BMI</h1>
+  <form action="/submit" method="post">{% csrf_token %}
   {{ form.as_p }}
-  <p><input type="submit" value="Calculate"><a href='../'>Cancel</a></p>
-</form>
+  <button class="styled-button" type="submit">Click me to submit</button>
+<!--   <p><input type="submit" value="Calculate"><a href='../'>Cancel</a></p> -->
+  </form>    
+
+</body>
+</html>
+
+
+
+
+
