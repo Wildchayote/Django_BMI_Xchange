@@ -1,9 +1,16 @@
 from django.db import models
 
 class BMIRecord(models.Model):
-    height = models.FloatField(default=True)
-    weight = models.FloatField(default=True)
+    name = models.CharField(max_length=120)
+    height = models.FloatField(blank=False, null=True)
+    weight = models.FloatField(blank=False, null=True)
+    BMI = models.FloatField(blank=False, null=True)
     date = models.DateTimeField(auto_now_add=True)
+
+# class BMIRecord(models.Model):
+#     height = models.FloatField(default=True)
+#     weight = models.FloatField(default=True)
+#     date = models.DateTimeField(auto_now_add=True)
 
 
 # try:
