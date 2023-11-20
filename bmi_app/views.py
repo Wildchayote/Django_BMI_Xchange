@@ -63,10 +63,10 @@ def bmi_result(request, pk):
     
     bmi_result = BMIRecord(name=name, weight=weight, height=height, BMI=bmi)
     bmi_result.save()
-    
+    context = {'bmi_record': bmi_record, 'bmi': bmi, 'bmi_result': bmi_result, 'Home':'Home' }
     # if pk%2 !=0:
     bmi_record.delete()
-    return render(request, 'bmi_result.html', {'bmi_record': bmi_record, 'bmi': bmi, 'bmi_result': bmi_result})
+    return render(request, 'bmi_result.html', context)
     
 def home_view(request):
     context =  {'BMI': 'BMI Page', 'xchange': 'Xchange Page'}
