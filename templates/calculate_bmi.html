@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your HTML Page</title>
+    <title>Calculate BMI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 
     <style>
         /* Add your CSS styles for the button here */
@@ -26,7 +38,7 @@
   <h1>Calculate BMI</h1>
   <form method="post">{% csrf_token %}
   {{ form.as_p }}
-  <button class="styled-button" type="submit">Click me to submit</button>
+  <button class="styled-button" type="submit">Calculate</button>
 <!--   <p><input type="submit" value="Calculate"><a href='../'>Cancel</a></p> -->
   </form>    
 
