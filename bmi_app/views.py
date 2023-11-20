@@ -64,8 +64,8 @@ def bmi_result(request, pk):
     bmi_result = BMIRecord(name=name, weight=weight, height=height, BMI=bmi)
     bmi_result.save()
     
-    if pk%2 !=0:
-        BMIRecord.objects.get(pk=pk).delete()
+    # if pk%2 !=0:
+    bmi_record.delete()
     return render(request, 'bmi_result.html', {'bmi_record': bmi_record, 'bmi': bmi, 'bmi_result': bmi_result})
     
 def home_view(request):
