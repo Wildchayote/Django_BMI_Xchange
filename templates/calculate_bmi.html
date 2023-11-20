@@ -24,7 +24,7 @@
 </head>
 <body>
   <h1>Calculate BMI</h1>
-  <form action="/submit" method="post">{% csrf_token %}
+  <form method="post">{% csrf_token %}
   {{ form.as_p }}
   <button class="styled-button" type="submit">Click me to submit</button>
 <!--   <p><input type="submit" value="Calculate"><a href='../'>Cancel</a></p> -->
