@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{%block content%}
 <p>Date: {{ conversion_record.date }}</p>
 {% if conversion_record.currency == 'GBP'%}
     <h1 style="font-size: medium;">Conversion Result | Pound (£) to Naira (N)</h1>
@@ -10,3 +12,4 @@
     <h1>NGN {{ conversion_record.amount }} | GBP {{ convert|floatformat:2 }}</h1>
     
 {% endif %}
+{%endblock%}
