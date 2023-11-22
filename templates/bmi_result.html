@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 {%block content%}
+ <li> Go back <a href="{% url 'home' %}">{{ Home }}</a></li>
 <h1 style="color: rgba(31, 3, 3, 0.853); font-size: 16px; ">{{ bmi_record.name }}</h1>
     <p style="font-size: 18px;">Date: {{ bmi_record.date }}</p>
     <li style="font-size: 18px;"><b>Height:</b> {{ bmi_record.height }} m</li>
@@ -17,5 +18,4 @@
     {% elif bmi >= 30.0 %}
     <p><b>Remark: </b> {{bmi_record.name}}, you are within the obese range (30 and above).</p>
     {% endif %}
-    <li> Go back to<a href="{% url 'home' %}">{{ Home }}</a></li>
 {%endblock%}
