@@ -3,8 +3,8 @@ from .forms import ConversionForm
 from .models import Conversion
 from django.http import Http404
 import math
-one_Npound = 1299.99
-one_Pnaira = 1241.00
+one_Npound = 1459.99
+one_Pnaira = 1418.00
 
 def mainform(request):
     if request.method == 'POST':
