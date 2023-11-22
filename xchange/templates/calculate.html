@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate BMI</title>
+    <title>Convert currency</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,9 +37,10 @@
 </head>
 <body>
   <h1>Convert</h1>
+    <p1>Convert money from one currency to another </p1>
   <form method="post">{% csrf_token %}
   {{ form.as_p }}
-  <button class="styled-button" type="submit">Calculate</button>
+  <button class="styled-button" type="submit">Convert</button>
 <!--   <p><input type="submit" value="Calculate"><a href='../'>Cancel</a></p> -->
   </form>    
 
